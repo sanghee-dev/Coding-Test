@@ -9,7 +9,7 @@ func solution(_ numbers:[Int]) -> String {
 
     let answer = sortedNumArr.map({ String($0) }).reduce("") { $0 + $1 }
     
-    return answer
+    return sortedNumArr.first == 0 ? "0" : answer
 }
 
 solution(numbers)
