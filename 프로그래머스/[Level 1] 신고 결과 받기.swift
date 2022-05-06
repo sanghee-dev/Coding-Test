@@ -11,7 +11,7 @@ Array의 Element 타입을 String으로 고정
 */
 extension Array {
 
-    func dictionary() -> [Element: Int] where Element: Hashable {
+    func indexDictionary() -> [Element: Int] where Element: Hashable {
         var dict: [Element: Int] = [:]
         for (index, element) in self.enumerated() {
             dict[element] = index
@@ -27,7 +27,7 @@ extension Array {
 }
 
 func solution(_ id_list:[String], _ report:[String], _ k:Int) -> [Int] {
-    let idDict: [String: Int] = id_list.dictionary()
+    let idDict: [String: Int] = id_list.indexDictionary()
     var countList: [Int] = Array(repeating: 0, count: id_list.count)
     var reportDict: [String: [String]] = [:] // [reported: [reporter]]
 
